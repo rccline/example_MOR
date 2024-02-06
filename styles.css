@@ -1,0 +1,11 @@
+/* Adjust the maximum width for all tables */
+  table.dataTable {
+    max-width: 500px; /* Adjust the max-width to your preferred value */
+  }
+
+/* Prevent text from wrapping in individual cells */
+  table.dataTable td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }

@@ -1,0 +1,324 @@
+---
+# title: "Golden Triangle Mineral Owhership Report"
+# author: "Robert C Cline Sr"
+# date: "12/1/2019"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(include= FALSE, echo = FALSE)
+library(here)
+library(jpeg)
+library(readr)
+```
+
+<!-- You can install the development version of gt from GitHub. Use the following in the R console to install gt.
+
+remotes::install_github("rstudio/gt") -->
+
+
+![](../gtlslogo.png)
+
+
+
+### December 11, 2020
+
+
+
+<address>
+### Golden Triangle Land Services, Inc.<br>
+<strong><large><address>PO Box 279 <br>
+Sidney, Nebraska 69162<br>
+Phone: <abbr> (713) 806-6011<br>
+<a href="mailto:#">rccline@fastmail.fm</a>
+</address></large></strong>
+
+<br>
+
+<strong><font size= "4"><p class= "text-center"> Mineral Ownership Report </p></font></strong> 
+ 
+  <strong><font size= "2"><p class= "text-center"> Mineral Ownership Only </p></font></strong>
+  <strong><font size= "2"><p class= "text-center"> See "Surface Ownership Report" for surface Interest </p></font></strong>
+ 
+\  
+\  
+
+#### Description:
+<strong><u><font size= "2">Towhship 14 North, Range 49 West of the 6^th^ P.M.<br> </u></strong>
+
+Section 2:  NW/4 and the N/2 of the S/2; and<br>
+Section 3:  N/2 and the W/2 of the SE/4; and
+containing 738.43 acres, more or less, situated in Cheyenne County, Nebraska</font>  
+  
+\  
+\  
+\  
+  
+
+
+```{r include = FALSE, echo=FALSE}
+# Have to set directory.  Using {here} breaks the formatting of column types
+
+NW_N2SW <- read_csv("../data/NW_N2SW.csv", col_types = cols(`Date Plus 23 Yrs` = col_date(format = "%m/%d/%Y"), 
+    FileDate = col_date(format = "%m/%d/%Y"), 
+    Tract = col_skip(), Zip = col_integer()))
+View(NW_N2SW)
+
+
+```
+
+
+
+```{r include=FALSE, echo=FALSE}
+
+# *** gt package DEMO [Introducing the gt package - Rich Iannone] (https://www.youtube.com/watch?v=h1KAjSfSbmk&t=635s) ***
+# install.packages("Rtools") #Not available for R version 3.6.1
+# library(tinytex)
+# library(knitr)
+library(tidyverse)
+# library(kableExtra)
+# library(tinytex)
+library(gt)
+library(readr)
+
+```
+
+
+
+```{r}
+
+gt_example <- read_csv("D:/D_Documents/GitHub-DasRotRad/morPandoc2/data/gt_example.csv", 
+    col_types = cols(`FD + 23 Yrs` = col_date(format = "%m/%d/%Y"), 
+        FileDate = col_date(format = "%m/%d/%Y"), 
+        Tract = col_skip(), parent = col_integer()))
+View(gt_example)
+```
+
+
+```{r}
+mymor <- gt_example %>%
+  filter(Index <= 10) %>%
+  select(-"parent",-"Phone2", -"Proper Fract")
+  
+```
+
+
+```{r, include=FALSE}
+mymor %>% gt()
+   
+```
+
+
+```{r, include=FALSE}
+#  
+# ****** Create Mineral Owner Report ******
+# include row groups (using the 'row' and 'group' columns)
+
+tab <- 
+ 
+ mymor %>%  
+   select(Group:Status) %>%
+  gt(
+    rowname_col= "Index",
+    groupname_col = "Group") %>%
+  tab_stubhead(label ="Group Index") %>%
+  fmt_missing(
+    columns = "Status",
+    missing_text = "---"
+  )
+
+tab  
+```
+   
+  
+```{r, include=FALSE}
+# Add a header to the table
+ 
+tab_2 <-
+  tab %>%
+  tab_header(title = "Mineral Ownership Report",
+    subtitle = md("See Appendix I and Appendix II for additional data")) %>%
+  tab_footnote(
+    footnote = "Owner group membership corresponds with source of mineral interest.",
+    locations = cells_column_labels(
+      columns = vars("Owner")))
+tab_2
+```
+
+```{r, include=TRUE}
+tab_10 <- 
+  tab_2 %>%
+  tab_options(
+    table.font.size = "small"
+  )
+tab_10
+```
+ 
+
+Appendix I.   Known addresses of the above mineral owners.
+
+Appendix II.  As of the date of this report, owners of 120 net minerals would qualify for Dormant Mineral Ownership action as prescribed under Nebraska Revised Statute Chapter 57 Section 229
+
+Ad valorem Taxes:  See the Cheyenne County NE Treasurer’s Reports attached to Surface Ownership Reports covering the above captioned lands.
+				
+Survey Map:  Can be obtained from the Nebraska State Surveyor’s Office: http://www.sso.nebraska.gov/
+
+
+Judgments/Liens:  There do not appear to be any judgements or liens against mineral filed of record in Cheyenne County, NE.
+
+This limited title runsheet lists the first severance of right-of-way, easement and royalty documents; the same are for reference only and not made a part of the mineral division of this report.  Mortgages affecting the captioned lands which are within the ten years of the date of maturity or which have been extended by affidavit filed before any cause of action has been barred are listed.  Mortgages covering easements, rights of way or leasehold interests have not been listed.  
+
+	 
+Unsatisfied Mortgages:  None
+
+Nebraska Oil & Gas Conservation Commission:  All leases on this tract have expired by their own terms.  Obtained From http://www.nogcc.ne.gov/
+	
+
+The tract indices & copies of recorded documents were attained from Cheyenne County, Nebraska Clerk & Recorder’s Office, from Patent to July 22, 2019 at 15:00 o’clock p.m..  
+
+Cheyenne County Tax information is from the WebSite:  https://cheyenne.gisworkshop.com/?&t=assessor/
+. 
+Probate Records and District Clerk Records were checked in the Cheyenne County Court.  
+
+Oil & Gas Production records were made available from the NOGCC website: 
+http://www.nogcc.ne.gov/
+
+
+This Mineral Ownership Report is not for Drilling Title purposes and should not be used as such.  
+
+*The undersigned is not an attorney, and this is not a title opinion.  This limited mineral ownership report is issued to determine mineral ownership under the above captioned lands for the exclusive use of Norstar Petroleum, Inc. Although the undersigned has used the utmost diligence in compiling this report, no liability for any errors or omissions is assumed hereunder.*
+
+
+Date Completed: 11/11/2019; Covers the period from Patent to November 11, 2019 at 15:00 o’clock p.m.
+
+Name: Robert C. Cline, CPL  
+Golden Triangle Land Services, Inc.  
+Phone: 713-806-6011  
+E-mail Address: rccline@ogls.net  
+P O Box 279  
+Sidney, NE 69162  
+
+
+
+
+
+
+
+
+
+
+\pagebreak
+
+```{r, include=FALSE}
+#  
+# Create Appendix I  --- Owners Addresses
+# 
+
+tab_3 <- 
+ 
+ mymor %>%  
+   select(Index, Owner, Address,City, State, Zip, Phone1) %>%
+  gt() # %>%
+  
+ 
+tab_3  
+```
+
+<P style="page-break-before: always">
+
+ <strong><font size= "5"><p class= "text-center"> Appendix I </p></font></strong>
+ <br>
+ <br>
+
+
+```{r, include=TRUE}
+tab_4 <-
+  tab_3 %>%
+    tab_header(title = "Mineral Owner Addresses",
+    subtitle = md("See Appendix II for Mineral Abandonment Act dates")) %>%
+  
+  tab_options(
+    table.font.size = "small"
+  ) %>%
+  fmt_missing(
+    columns = "City",
+    missing_text = "---"
+  ) %>%
+  fmt_missing(
+    columns = "Address",
+    missing_text = "---"
+  ) %>%
+  fmt_missing(
+    columns = "State",
+    missing_text = "---"
+  )  %>%
+   fmt_missing(
+    columns = "Zip",
+    missing_text = "---"
+  ) %>%
+  fmt_missing(
+    columns = "Phone1",
+    missing_text = "---"
+  )  
+
+
+
+  tab_4
+  
+```
+
+
+
+\pagebreak
+
+ <strong><font size= "5"><p class= "text-center"> Appendix II </p></font></strong>
+ 
+ <br>
+ <br>
+ 
+
+
+```{r, include=FALSE}
+#  
+# Create Appendix II --- Nebraska Mineral Abandoment Act dates
+# 
+
+tab_5 <- 
+ 
+ mymor %>%  
+   select(Index, Owner, FileDate, Book, Page, "FD + 23 Yrs") %>%
+  gt() %>%
+  
+  fmt_date(
+    columns = vars(FileDate,"FD + 23 Yrs"),
+    date_style = 6
+  )
+ 
+tab_5  
+```
+ 
+```{r, include=TRUE}
+tab_6 <-
+  tab_5 %>%
+    tab_header(title = "Date Mineral Owner is Subject to Nebraska Mineral Abandonment Statutes",
+    subtitle = md("Neb. Rev. Stat. Sec. 57-228 to 57-231")) %>%
+   
+  tab_options(
+    table.font.size = "small"
+  ) %>%
+  fmt_missing(
+    columns = "FileDate",
+    missing_text = "---"
+  )  %>%
+  fmt_missing(
+    columns = "FD + 23 Yrs",
+    missing_text = "---"
+  )  
+ 
+  tab_6
+```
+

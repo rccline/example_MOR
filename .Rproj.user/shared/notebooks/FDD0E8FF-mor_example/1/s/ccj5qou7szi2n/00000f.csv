@@ -1,0 +1,4 @@
+"0","mymor <- gt_example %>%"
+"0","  filter(Index <= 10) %>%"
+"0","  select(-""parent"",-""Phone2"")"
+"0","  "

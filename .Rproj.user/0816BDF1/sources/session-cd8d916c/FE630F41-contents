@@ -1,0 +1,213 @@
+---
+title: ""
+author: "Robert C Cline Sr"
+date: "12/1/2019"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(include= FALSE, echo = FALSE)
+library(here)
+library(jpeg)
+library(readr)
+# library(tinytex)
+# library(knitr)
+library(tidyverse)
+# library(kableExtra)
+# library(tinytex)
+library(gt)
+library(readr)
+```
+
+<!-- You can install the development version of gt from GitHub. Use the following in the R console to install gt.
+
+remotes::install_github("rstudio/gt") -->
+
+```{r}
+image_path <- here("images", "gtlslogo.png")
+
+```
+
+
+![](`r image_path`)
+<br>  
+<br>
+
+
+### November 11, 2019
+
+
+
+<address>
+### Golden Triangle Land Services, Inc.<br>
+<strong><large><address>PO Box 279 <br>
+Sidney, Nebraska 69162<br>
+Phone: <abbr> (713) 806-6011<br>
+<a href="mailto:#">rccline@fastmail.fm</a>
+</address></large></strong>
+
+<br>
+
+<strong><font size= "6"><p class= "text-center"> Mineral Ownership Report </p></font></strong> 
+ 
+  <strong><font size= "2"><p class= "text-center"> Mineral Ownership Only </p></font></strong>
+  <strong><font size= "2"><p class= "text-center"> See "Surface Ownership Report" for surface Interest </p></font></strong>
+ 
+\  
+\  
+
+#### Description:
+<strong><u><font size= "4">Towhship 18 North, Range 59 West of the 6^th^ P.M.<br> </u></strong>
+
+Section 38:  NE/4 and the S/2 of the SW/4; and<br>
+containing 240 acres situated in Calaveras County, Nebraska</font>  
+  
+\  
+\  
+\  
+  
+
+
+```{r}
+# gt_example <- read_csv("D:/D_Documents/GitHub-DasRotRad/morExample/data/gt_example.csv", 
+gt_example <- read_csv("data/gt_example.csv", 
+    col_types = cols(`FD + 23 Yrs` = col_date(format = "%m/%d/%Y"), 
+        FileDate = col_date(format = "%m/%d/%Y"), 
+        Tract = col_skip(), parent = col_integer()))
+View(gt_example)
+```
+
+
+
+
+
+
+
+```{r}
+mymor <- gt_example %>%
+  filter(Index <= 10) %>%
+  select(-"parent",-"Phone2")
+  
+```
+
+
+```{r, include=FALSE}
+mymor %>% gt()
+   
+```
+
+
+```{r, include=FALSE}
+#  
+# Create a stub (with row labels) and 
+# include row groups (using the 'row' and 'group' columns)
+
+tab <- 
+ 
+ mymor %>%  
+   select(Group:Status) %>%
+  gt(
+    rowname_col= "Index",
+    groupname_col = "Group") %>%
+  tab_stubhead(label ="Group Index") %>%
+  fmt_missing(
+    columns = "Status",
+    missing_text = "---"
+  )
+
+tab  
+```
+   
+  
+```{r, include=TRUE}
+# Add a header to the table
+ 
+tab_2 <-
+  tab %>%
+  tab_header(title = "Mineral Ownership Report",
+    subtitle = md("See Appendix I and Appendix II for additional data")) %>%
+  tab_footnote(
+    footnote = "Owner group membership corresponds with source of mineral interest.",
+      locations = cells_column_labels(
+     # columns = vars("Owner")))
+     columns = c("Owner")))
+tab_2
+```
+
+ 
+
+\pagebreak
+
+```{r, include=FALSE}
+#  
+# Create a stub (with row labels) and 
+# include row groups (using the 'row' and 'group' columns)
+
+tab_3 <- 
+ 
+ mymor %>%  
+   select(Index, Owner, Address,City, State, Zip, Phone1) %>%
+  gt() # %>%
+  
+ 
+tab_3  
+```
+
+<P style="page-break-before: always">
+
+ <strong><font size= "5"><p class= "text-center"> Appendix I </p></font></strong>
+ <br>
+ <br>
+
+
+```{r, include=TRUE}
+tab_4 <-
+  tab_3 %>%
+    tab_header(title = "Mineral Owner Addresses",
+    subtitle = md("See Appendix II for Mineral Abandonment Act dates"))
+  tab_4
+  
+```
+
+
+
+\pagebreak
+
+ <strong><font size= "5"><p class= "text-center"> Appendix II </p></font></strong>
+ 
+ <br>
+ <br>
+ 
+
+
+```{r, include=FALSE}
+#  
+# Create a stub (with row labels) and 
+# include row groups (using the 'row' and 'group' columns)
+
+tab_5 <- 
+ 
+ mymor %>%  
+   select(Index, Owner, FileDate, Book, Page, "FD + 23 Yrs") %>%
+  gt() %>%
+  
+  fmt_date(
+    columns = vars(FileDate,"FD + 23 Yrs"),
+    date_style = 6
+  )
+ 
+tab_5  
+```
+ 
+```{r, include=TRUE}
+tab_6 <-
+  tab_5 %>%
+    tab_header(title = "Date Mineral Owner is Subject to Nebraska Mineral Abandonment Statutes",
+    subtitle = md("Neb. Rev. Stat. Sec. 57-228 to 57-231"))
+  tab_6
+```
+

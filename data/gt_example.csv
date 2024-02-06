@@ -1,0 +1,33 @@
+﻿Tract,parent,Group,Index,Owner,Gross Acres,Proper Fract,Decimal Fract,NMA,Status,Address,City,State,Zip,Phone1,Phone2,FileDate,Book,Page,FD + 23 Yrs
+N2SW & NW,,grp_a,1.00,Jeffrey Blair,240.00,0/1,0.0000,0.0000,NA,,,,,,,,,,
+N2SW & NW,1.00,grp_a,2.00,Newcastle and Associates,240.00,0/1,0.0000,0.0000,NA,,,,,,,,,,
+N2SW & NW,1.00,grp_a,3.00,Walter K. Mitty; Walter K. Mitty Trustee of the Mitty Family Revocable Trust,240.00,1/8,0.1250,30.0000,OPEN,PO Box 4444,Denver,CO,80202,,,2/3/2011,300,575,2/3/2034
+N2SW & NW,1.00,grp_a,4.00,"Wallace Hunt; Hunter Oil Company, Claimant",240.00,1/8,0.1250,30.0000,OPEN,PO Box 1393,Grand Junction,CO,81506,,,10/26/1982,432,537,10/26/2005
+N2SW & NW,1.00,grp_a,5.00,"William Wallace, Howard A Wallace Trustee of the Laurel Wallace Trust",240.00,1/8,0.1250,30.0000,OPEN,2393 Lincoln Highway,Denver,CO,80295,,,2/10/2011,554,610,2/10/2034
+N2SW & NW,2.00,grp_a,6.00,William Robert Thornton; WRT Movie Company,240.00,1/8,0.1250,30.0000,OPEN,PO Box 1393,Durango,CO,81303,,,5/3/2010,555,818,5/3/2033
+N2SW & NW,3.00,grp_b,7.00,"John Hancock  Johnson, widower",240.00,0/1,0.0000,0.0000,NA,,,,,,,,,,
+N2SW & NW,7.00,grp_b,7.10,Rhonda Rhanda,240.00,1/36,0.0278,6.6667,OPEN,,,,,,,5/24/2007,277,774,5/24/2030
+N2SW & NW,7.00,grp_b,7.20,"Mary Westmoreland, Dec'd",240.00,0/1,0.0000,0.0000,NA,,,,,,,,,,
+N2SW & NW,7.00,grp_b,7.21,Edward Hill Carroll,240.00,1/72,0.0139,3.3333,OPEN,PO Box 1393,Grandy,NC,27939,252-982-6782,,6/24/2005,277,774,6/24/2028
+N2SW & NW,7.00,grp_b,7.22,Freddie Fender,240.00,1/72,0.0139,3.3333,OPEN,2393 Lincoln Highway,Tampa,FL,33604,843-822-0034,,6/24/2005,277,774,6/24/2028
+N2SW & NW,7.00,grp_b,7.30,Alexandria Romanov,240.00,0/1,0.0000,0.0000,OPEN,PO Box 1393,,,,,,6/24/2005,277,774,6/24/2028
+N2SW & NW,7.00,grp_b,7.31,Maria Gonzales Gonzales,240.00,1/72,0.0139,3.3333,OPEN,PO Box 4444,Houston,TX,77019,713-521-9900,,6/24/2005,277,774,6/24/2028
+N2SW & NW,7.00,grp_b,7.32,Michael Maricopa,240.00,1/144,0.0069,1.6667,OPEN,PO Box 1393,Houston,TX,77019,713-521-9900,,6/24/2005,277,774,6/24/2028
+N2SW & NW,7.00,grp_b,7.33,Hugo de la Garza,240.00,1/144,0.0069,1.6667,OPEN,2393 Lincoln Highway,Houston,TX,77019,713-521-9900,,6/24/2005,277,774,6/24/2028
+N2SW & NW,1.00,grp_c,8.00,Samual E Clemens,240.00,0/1,0.0000,0.0000,NA,,,,,,,,,,
+N2SW & NW,8.00,grp_c,8.10,Ernesto Hemmingway,240.00,1/84,0.0119,2.8571,OPEN,14 Washington Ave,Houston,TX,77019,713-521-9900,,6/15/1987,231,59,6/15/2010
+N2SW & NW,8.00,grp_c,8.20,Lorraine Bowen et vir James Bowen,240.00,1/84,0.0119,2.8571,OPEN,7552603 West Pecos Ave,Houston,TX,77019,713-521-9900,,6/15/1987,231,59,6/15/2010
+N2SW & NW,8.00,grp_c,8.30,Rhonda Rhanda,240.00,1/84,0.0119,2.8571,OPEN,5019 E Hickamore Drive,Houston,TX,77019,713-521-9900,,6/15/1987,231,59,6/15/2010
+N2SW & NW,8.00,grp_c,8.40,"Mary Westmoreland, Dec'd",240.00,1/84,0.0119,2.8571,OPEN,10 County Club Drive,Houston,TX,77019,713-521-9900,,6/15/1987,231,59,6/15/2010
+N2SW & NW,8.00,grp_c,8.50,Edward Hill Carroll,240.00,1/84,0.0119,2.8571,OPEN,433 5th Street,Houston,TX,77019,713-521-9900,,6/15/1987,231,59,6/15/2010
+N2SW & NW,8.00,grp_c,8.60,Freddie Fender,240.00,1/84,0.0119,2.8571,OPEN,143442 51st Street,Houston,TX,77019,713-521-9900,,6/15/1987,231,59,6/15/2010
+N2SW & NW,8.00,grp_c,8.70,Alexandria Romanov,240.00,1/84,0.0119,2.8571,OPEN,17307 Arlington,Houston,TX,77019,713-521-9900,,,231,59,12/31/1922
+N2SW & NW,8.00,grp_d,9.00,Maria Gonzales Gonzales,240.00,0/1,0.0000,0.0000,NA,,,,,,,,,,
+N2SW & NW,8.00,grp_d,9.10,Michael Maricopa,240.00,0/1,0.0000,0.0000,NA,,,,,,,,,,
+N2SW & NW,8.00,grp_d,9.20,Hugo de la Garza,240.00,1/60,0.0167,4.0000,OPEN,36393 South California St.,Houston,TX,80110,713-521-9900,,6/28/2011,365,827,6/28/2034
+N2SW & NW,8.00,grp_d,9.30,Dick Dyes,240.00,1/60,0.0167,4.0000,OPEN,P.O. Box 38856,Houston,TX,68937,713-521-9900,,6/28/2011,365,827,6/28/2034
+N2SW & NW,8.00,grp_d,9.40,Rodney King & Carole King,240.00,1/60,0.0167,4.0000,OPEN,2332 Monticello Dr,Houston,TX,69162,713-521-9900,,6/28/2011,365,827,6/28/2034
+N2SW & NW,8.00,grp_d,9.50,Gary Lavern Tobler & Rachel L Tobler,240.00,1/60,0.0167,4.0000,OPEN,36393 South California St.,Houston,TX,68504,713-521-9900,,6/28/2011,365,827,6/28/2034
+N2SW & NW,8.00,grp_d,9.60,Larry Lemay,240.00,1/60,0.0167,4.0000,OPEN,P.O. Box 38856,Houston,TX,68847,713-521-9900,,6/28/2011,365,827,6/28/2034
+N2SW & NW,7.00,grp_e,10.00,Thomas Friedman,240.00,1/4,0.2500,60.0000,OPEN,2332 Monticello Dr,Houston,TX,69162,713-521-9900,,6/28/2011,365,827,6/28/2034
+,,,,,,,1.0000,240.0000,,,,,,,,,,,
